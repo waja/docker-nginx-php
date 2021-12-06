@@ -144,7 +144,7 @@ RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
     oniguruma-dev \
     ca-certificates \
     ${CUSTOM_BUILD_PKGS}" \
- && apk -U add \
+ && apk -U --no-cache add \
     ${BUILD_DEPS} \
     s6 \
     su-exec \
