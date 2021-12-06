@@ -121,7 +121,7 @@ ARG CUSTOM_PKGS=" \
 
 COPY rootfs /
 
-# hadolint ignore=DL3003,DL3018
+# hadolint ignore=DL3003,DL3018,SC2086,DL3047
 RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
  && BUILD_DEPS=" \
     linux-headers \
