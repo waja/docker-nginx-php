@@ -6,10 +6,7 @@ on:
       - $default-branch
       - development
       - master
-      - PHP7.3
-      - PHP7.4
-      - PHP8.0
-      - PHP8.1
+      - PHP*.*
     tags:
       - '*.*.*-*'
   # Run tests for any PRs
