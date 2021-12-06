@@ -120,6 +120,7 @@ ARG CUSTOM_PKGS=" \
 
 COPY rootfs /
 
+# hadolint ignore=DL3003,DL3018
 RUN NB_CORES=${BUILD_CORES-$(getconf _NPROCESSORS_CONF)} \
 #
 ### Packages installation
