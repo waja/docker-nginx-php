@@ -11,6 +11,8 @@ on:
     # push on all tags
     tags:
       - '*.*.*-*'
+      - '*.*.*'
+      - '*.*'
     branches:
       - master
       - development
