@@ -6,10 +6,20 @@ ARG NGINX_VER=1.20.1
 ARG PHP_VER=7.4.25
 ARG LIBICONV_VERSION=1.16
 
-LABEL description="nginx + php image based on Alpine" \
-      maintainer="hoellen <info@hoellen.eu>" \
-      php-version="PHP v$PHP_VER built from source" \
-      nginx-version="nginx v$NGINX_VER built from source"
+# See http://label-schema.org/rc1/ and https://microbadger.com/labels
+LABEL maintainer="Jan Wagner <waja@cyconet.org>" \
+    org.label-schema.name="nginx + php image based on Alpine" \
+    org.label-schema.description="nginx + php image based on Alpine" \
+    org.label-schema.vendor="Cyconet" \
+    org.label-schema.schema-version="1.0" \
+    org.label-schema.build-date="${BUILD_DATE:-unknown}" \
+    org.label-schema.version="${BUILD_VERSION:-unknown}" \
+    org.label-schema.vcs-url="${VCS_URL:-unknown}" \
+    org.label-schema.vcs-ref="${VCS_REF:-unknown}" \
+    org.label-schema.vcs-branch="${VCS_BRANCH:-unknown}" \
+    php-version="PHP v$PHP_VER built from source" \
+    nginx-version="nginx v$NGINX_VER built from source" \
+    org.opencontainers.image.source="https://github.com/waja/docker-nginx-php"
 
 ARG PHP_MIRROR=http://ch1.php.net
 
