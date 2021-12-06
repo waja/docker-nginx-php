@@ -10,6 +10,7 @@ usage() {
     echo "       $0 --ini-name 0-apc.ini apcu apc"
     echo
     echo 'Possible values for module-name:'
+    # shellcheck disable=SC2046,SC2005,SC2185
     echo $(find -maxdepth 1 -type f -name '*.so' -exec basename '{}' ';' | sort)
 }
 

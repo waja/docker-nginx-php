@@ -12,6 +12,7 @@ usage() {
     echo 'if custom ./configure arguments are necessary, see docker-php-ext-configure'
     echo
     echo 'Possible values for ext-name:'
+    # shellcheck disable=SC2046,SC2005
     echo $(find /usr/src/php/ext -mindepth 2 -maxdepth 2 -type f -name 'config.m4' | cut -d/ -f6 | sort)
 }
 
@@ -61,6 +62,7 @@ for ext in $exts; do
         [ -e Makefile ] || docker-php-ext-configure "$ext"
         make -j"$j"
         make -j"$j" install
+	# shellcheck disable=SC2038
         find modules \
             -maxdepth 1 \
             -name '*.so' \
